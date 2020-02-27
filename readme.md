@@ -12,10 +12,16 @@ git add -A
 it commit -m 'updated readme'
 git push -u origin master
 
+# init first two apps 
 python3.8 manage.py startapp app_blog
 python3.8 manage.py startapp app_projects
 
 # add new apps to blog_core/settings.py --> INSTALLED_APPS
 'app_blog',
 'app_projects',
+
+# check the server
+python3.8 manage.py runserver
+
+
 ```
