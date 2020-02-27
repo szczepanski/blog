@@ -59,3 +59,8 @@ http://inloop.github.io/sqlite-viewer/
 
 
 ```
+
+# improvements
+
+- change int to slug for human readable urls
+    - path('<int:post_id>/', views.detail, name='detail')
