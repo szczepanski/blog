@@ -1,3 +1,6 @@
+
+# the code bit
+
 ```
 
 # python pre-reqs 
@@ -9,7 +12,7 @@ pip3.8 install pillow
 szczepanski/blog
 
 
-
+# initial django setup 
 django-admin startproject blog_core
 mv blog_core blog
 cd blog
@@ -19,22 +22,35 @@ git add -A
 it commit -m 'updated readme'
 git push -u origin master
 
+
 # init first two apps 
 python3.8 manage.py startapp app_blog
 python3.8 manage.py startapp app_projects
+
 
 # add new apps to blog_core/settings.py --> INSTALLED_APPS
 'app_blog',
 'app_projects',
 
+
 # check the server
 python3.8 manage.py runserver
 
-# migrations - db model changes
 
+# migrations - db model changes
 # discover new migrations / db model changes (models.py)
 python3.8 manage.py makemigrations
 # apply the discovered migrations
 python3.8 manage.py migrate
+
+
+# define app gui admin credentials
+python3.8 manage.py createsuperuser
+# provide username and password, email - optional 
+# if needed in future, change password for any admin user
+python3.8 manage.py changepassword <username>
+
+# register models to show in admin web gui 
+# blog/app_projects/admin.py
 
 ```
