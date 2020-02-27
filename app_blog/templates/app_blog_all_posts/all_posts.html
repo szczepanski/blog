@@ -2,7 +2,8 @@ Hello from all_blog.html
 
 {% for post in posts %}
 
-<h2>{{ post.title }}</h2>
+<a href="{% url 'detail' post.id %}"><h2>{{ post.title }}</h2></a>
+
 <h5>{{ post.date }}</h5>
 <p>{{ post.description }}</p>
 
