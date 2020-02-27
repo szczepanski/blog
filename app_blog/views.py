@@ -10,6 +10,6 @@ def all_posts(request):
     
     return render(request, 'app_blog_all_posts/all_posts.html', {'posts':posts})
 
-# def detail(request, blog_id):
-#     blog = get_object_or_404(Blog, pk=blog_id)
-#     return render(request, 'blog/detail.html',{'blog':blog})
+def detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'app_blog_post/detail.html',{'post':post})
