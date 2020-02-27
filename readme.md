@@ -50,7 +50,12 @@ python3.8 manage.py createsuperuser
 # if needed in future, change password for any admin user
 python3.8 manage.py changepassword <username>
 
+
 # register models to show in admin web gui 
 # blog/app_projects/admin.py
+
+# online viewer to see db.sqlite3 file (if no confidential data involved)
+http://inloop.github.io/sqlite-viewer/
+
 
 ```

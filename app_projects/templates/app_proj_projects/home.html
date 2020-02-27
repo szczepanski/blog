@@ -1,5 +1,11 @@
+{% load static %}
+
 <h1>Piotr's projects home page</h1>
 <br>
+
+<a href="{% static 'app_proj_static_media/buka.jpg' %}">buka</a>
+
+<img src="{% static 'app_proj_static_media/snufkin.jpg' %}" alt="">
 
 {% for project in projects %}
 
