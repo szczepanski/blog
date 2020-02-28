@@ -60,7 +60,15 @@ http://inloop.github.io/sqlite-viewer/
 
 ```
 
-# improvements
+# improvements and fixes
 
 - change int to slug for human readable urls
     - path('<int:post_id>/', views.detail, name='detail')
+- fix:
+    - statc media works ok, but still errors 
+    ```
+    "GET / HTTP/1.1" 200 4317
+    "GET /media/app_projects/images/logo_cloud.png HTTP/1.1" 304 0
+    "GET /blog/ HTTP/1.1" 200 4443
+    "GET /static/app_proj_static_media/custom.css HTTP/1.1" 304 0
+    ```
