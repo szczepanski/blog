@@ -19,18 +19,18 @@
 
 <div class="row justify-content-center mb-3">
     <div class="col-md-9 text-center">
-        <h1 id="hometext" class="font-weight-bold">Piotr's projects home page</h1>
+        <h1 id="hometext" class="font-weight-bold">home</h1>
     </div>
 </div>
 
 
-<h2 class="mt-5">Portfolio</h2>
+<h2 class="mt-5">recent projects</h2>
 <hr>
 <div class="row">
     {% for project in projects %}
     <div class="col-lg-4 col-md-6">
         {% if project.url %}
-        <a href="{{ project.url }}">
+        <a href="{{ project.url }}" target="_blank">
             <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="">
         </a>
         {% else %}
