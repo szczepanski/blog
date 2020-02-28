@@ -1,10 +1,19 @@
 Hello from all_blog.html
+<br>
+<br>
+the user is {{ USER }} ???
+
+<!-- pluralize makes word 'post' plural if number of posts is >1  -->
+<h2>$USER has written {{ counter_posts }} post{{ posts.count|pluralize }}</h2>
 
 {% for post in posts %}
 
 <a href="{% url 'app_blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
-
-<h5>{{ post.date }}</h5>
-<p>{{ post.description }}</p>
+<!--  striptags -> allows to use html inside without showing tags
+    and not applying them to format html
+striptags -> allows to shorten long descritpion to number of characters
+-->
+<h5>{{ post.date|date:'jS M y' }}</h5>
+<p>{{ post.description|striptags|truncatechars:100 }}</p>
 
 {% endfor %}
