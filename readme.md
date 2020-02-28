@@ -62,9 +62,15 @@ http://inloop.github.io/sqlite-viewer/
 
 # improvements and fixes
 
-- change int to slug for human readable urls
-    - path('<int:post_id>/', views.detail, name='detail')
-- fix:
+- improvements
+    - try other fonts from goole.fonts
+    - add details page for projects 
+    - change int to slug for human readable urls
+        - path('<int:post_id>/', views.detail, name='detail')
+    check 'app_blog:path to a file' functionality
+    - make function to write posts in .md or .rst
+
+- fixes
     - statc media works ok, but still errors 
     ```
     "GET / HTTP/1.1" 200 4317
