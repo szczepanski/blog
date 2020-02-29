@@ -1,0 +1,40 @@
+{% extends "app_proj_root/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 id="post-title" class="font-weight-bold text-center">projects</h1>
+
+
+- all_projects.html
+
+<br>
+<br>
+
+<!-- pluralize makes word 'post' plural if number of posts is >1  -->
+
+<h3 class="text-center mb-5">$USER Piotr has posted {{ counter_projects }} project{{ projects.count|pluralize }}</h3>
+
+{% for project in projects %}
+<div class="row justify-content-center my-3">
+    <div class="col-md-10">
+        <a href="{% url 'app_projects:detail' project.id %}">
+            <h2>{{ project.title }}</h2>
+        </a>
+        <h5>
+<!--  striptags -> allows to use html inside without showing tags
+    and not applying them to format html
+striptags -> allows to shorten long descritpion to number of characters
+-->
+        <!-- {{ post.date|date:'jS M y' }} -->
+        </h5>
+        <h4>{{ project.description|striptags|truncatechars:100 }}</h4>
+
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+

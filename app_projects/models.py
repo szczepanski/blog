@@ -16,6 +16,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='app_projects/images/')
+    date = models.DateField()
     url = models.URLField(blank=True)
 
     # below function allows to deispaly projects titles and description
