@@ -24,13 +24,14 @@
 </div>
 
 
-<h2 class="mt-5">recent projects</h2>
+<h2 class="mt-5">last projects</h2>
 <hr>
 <div class="row">
     {% for project in projects %}
     <div class="col-lg-4 col-md-6">
         {% if project.url %}
-        <a href="{{ project.url }}" target="_blank">
+        <a href="{% url 'app_projects:detail' project.id %}">
+        <!-- <a href="{{ project.url }}" target="_blank"> -->
             <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="">
         </a>
         {% else %}
@@ -40,6 +41,26 @@
         <p>{{ project.description|striptags|truncatechars:70 }}</p>
     </div>
     {% endfor %}
+</div>
+
+
+<h2 class="mt-5">recent posts</h2>
+<hr>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-lg-4 col-md-6">
+
+    <a href="{% url 'app_blog:detail' post.id %}">
+        <h3>{{ post.title }}</h3>
+    </a>
+
+    <p>{{ post.description|striptags|truncatechars:70 }}</p>
+
+    </div>
+
+    {% endfor %}
+
+
 </div>
 
 

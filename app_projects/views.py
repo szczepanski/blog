@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Project
+from app_blog.models import Post
+
 
 def home(request):
     projects = Project.objects.all()
-    return render(request, 'app_proj_root/home.html', {'projects':projects})
+    posts = Post.objects.all()
+    return render(request, 'app_proj_root/home.html', {'projects':projects, 'posts':posts})
 
 
 def all_projects(request):
