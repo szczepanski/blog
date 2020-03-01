@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Project
 
 def home(request):
@@ -14,6 +14,8 @@ def all_projects(request):
     
     return render(request, 'app_proj_projects/all_projects.html', {'projects':projects, 'counter_projects': counter_projects })
 
-def detail(request, post_id):
-    post = get_object_or_404(Project, pk=project_id)
-    return render(request, 'app_proj_project/detail.html',{'post':post})
+def detail(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    return render(request, 'app_proj_project/detail.html',{'project':project})
+
+
