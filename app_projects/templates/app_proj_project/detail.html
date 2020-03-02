@@ -11,7 +11,10 @@
 <!-- 
     safe -> apply all html tags
  -->
-{{ project.description|safe }}
+{{ project.brief|safe }}
+
+{{ project.content|safe }}
+
 
 {% endblock %}
 

@@ -13,15 +13,18 @@ def removeHtmlTags(raw_html):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='app_projects/images/')
+    title = models.CharField(max_length=200)
     date = models.DateField()
-    url = models.URLField(blank=True)
+    brief = models.TextField()
+    content = models.TextField()    
+    image = models.ImageField(upload_to='app_projects/images/')
+    
+    # tags
+    # categories
 
-    # below function allows to deispaly projects titles and description
+    # below function allows to deispaly projects titles and brief
     # in gui admin menu instead of object 1, 2 ...
     def __str__(self):
-        description_html = self.description[:100]
-        description_text = removeHtmlTags(description_html)
-        return '%s - %s' %(self.title, description_text)
+        brief_html = self.brief[:100]
+        brief_text = removeHtmlTags(brief_html)
+        return '%s - %s' %(self.title, brief_text)

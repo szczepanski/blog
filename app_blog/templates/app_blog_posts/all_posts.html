@@ -28,7 +28,7 @@ striptags -> allows to shorten long descritpion to number of characters
 -->
         {{ post.date|date:'jS M y' }}
         </h5>
-        <h4>{{ post.description|striptags|truncatechars:100 }}</h4>
+        <h4>{{ post.brief|striptags|truncatechars:100 }}</h4>
 
     </div>
 </div>

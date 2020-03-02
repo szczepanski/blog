@@ -29,16 +29,11 @@
 <div class="row">
     {% for project in projects %}
     <div class="col-lg-4 col-md-6">
-        {% if project.url %}
         <a href="{% url 'app_projects:detail' project.id %}">
-        <!-- <a href="{{ project.url }}" target="_blank"> -->
             <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="">
         </a>
-        {% else %}
-        <img src="{{ project.image.url }}" class="img-fluid mb-2">
-        {% endif %}
         <h3>{{ project.title }}</h3>
-        <p>{{ project.description|striptags|truncatechars:70 }}</p>
+        <p>{{ project.brief|striptags|truncatechars:70 }}</p>
     </div>
     {% endfor %}
 </div>
@@ -49,18 +44,13 @@
 <div class="row">
     {% for post in posts %}
     <div class="col-lg-4 col-md-6">
-
-    <a href="{% url 'app_blog:detail' post.id %}">
+        <a href="{% url 'app_blog:detail' post.id %}">
+            <img src="{{ post.image.url }}" class="img-fluid mb-2" alt="">
+        </a>
         <h3>{{ post.title }}</h3>
-    </a>
-
-    <p>{{ post.description|striptags|truncatechars:70 }}</p>
-
+        <p>{{ post.brief|striptags|truncatechars:70 }}</p>
     </div>
-
     {% endfor %}
-
-
 </div>
 
 

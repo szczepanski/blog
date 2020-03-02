@@ -11,6 +11,9 @@
 <!-- 
     safe -> apply all html tags
  -->
-{{ post.description|safe }}
+{{ post.brief|safe }}
+
+{{ post.content|safe }}
+
 
 {% endblock %}
