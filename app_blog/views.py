@@ -12,6 +12,6 @@ def all_posts(request):
     
     return render(request, 'app_blog_posts/all_posts.html', {'posts':posts, 'counter_posts': counter_posts })
 
-def detail(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
+def detail(request, slug):
+    post = get_object_or_404(Post, pk=slug)
     return render(request, 'app_blog_post/detail.html',{'post':post})

@@ -17,8 +17,11 @@ def all_projects(request):
     
     return render(request, 'app_proj_projects/all_projects.html', {'projects':projects, 'counter_projects': counter_projects })
 
-def detail(request, project_id):
-    project = get_object_or_404(Project, pk=project_id)
+# def detail(request, slug):
+#     project = get_object_or_404(Project, pk=slug)
+#     return render(request, 'app_proj_project/detail.html',{'project':project})
+
+
+def detail(request, slug):
+    project = get_object_or_404(Project, pk=slug)
     return render(request, 'app_proj_project/detail.html',{'project':project})
-
-

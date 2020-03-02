@@ -5,7 +5,7 @@ app_name = 'app_projects'
 
 urlpatterns = [
     path('', views.all_projects, name='all_projects'),
-    path('<int:project_id>/', views.detail, name='detail'),
+    path('<slug:slug>/', views.detail, name='detail'),
 ]
 
 # change int to slug for human readable urls

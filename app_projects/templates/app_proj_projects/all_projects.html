@@ -19,7 +19,7 @@
 {% for project in projects %}
 <div class="row justify-content-center my-3">
     <div class="col-md-10">
-        <a href="{% url 'app_projects:detail' project.id %}">
+        <a href="{% url 'app_projects:detail' project.slug %}">
             <h2>{{ project.title }}</h2>
         </a>
         <h5>

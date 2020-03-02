@@ -17,6 +17,7 @@ class Project(models.Model):
     date = models.DateField()
     brief = models.TextField()
     content = models.TextField()    
+    slug = models.SlugField(null=False, unique=True, primary_key=True)
     image = models.ImageField(upload_to='app_projects/images/')
     
     # tags
@@ -28,3 +29,13 @@ class Project(models.Model):
         brief_html = self.brief[:100]
         brief_text = removeHtmlTags(brief_html)
         return '%s - %s' %(self.title, brief_text)
+    
+
+    def getAbsoluteUrl(self):
+        return reverse('detail', kwargs={'slug': self.slug})
+    
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
